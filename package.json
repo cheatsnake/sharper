@@ -1,16 +1,20 @@
 {
-    "name": "picture-api",
+    "name": "sharper",
     "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
+    "description": "API server for editing images build on the top of Sharp Node.js library",
+    "main": "server.js",
     "scripts": {
         "dev": "nodemon src/server.ts",
         "build": "tsc",
         "start": "node build/server.js"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "keywords": [
+        "API",
+        "image",
+        "processing"
+    ],
+    "author": "cheatsnake",
+    "license": "MIT",
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^16.0.0",
