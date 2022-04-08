@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
-import express, { Application, Request, Response } from "express";
+import express, { Application } from "express";
 import fileUpload from "express-fileupload";
 import cors from "cors";
 import apiRouter from "./routes/api.router";
+import rootRouter from "./routes/root.router";
 
 dotenv.config();
 
@@ -14,10 +15,8 @@ app.use(express.json());
 app.use(fileUpload({}));
 
 app.use("/api", apiRouter);
-app.use("/", (req, res) => {
-    res.redirect("https://github.com/cheatsnake");
-});
+app.use("*", rootRouter);
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}...`));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`));
 
 export default app;
